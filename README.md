@@ -1,4 +1,4 @@
-# Lucid Blockfrost Proxy example
+# Lucid Blockfrost Proxy Example
 
 ## DISCLAIMER
 
