@@ -10,6 +10,10 @@ This is an example repo for using a proxy for the Lucid Blockfrost provider, so 
 
 This repo uses `next.js` and React. The code itself is also quite React-ish, building mainly on custom hooks. I don't necessarily suggest building your code like this, but since I have to deal with network changes, this was a suitable pattern.
 
+## Structure
+
+This is a standard next.js project, with only one page; `pages/index.tsx`. All the important code is located in the `hooks` folder.
+
 ## Features
 
 - Forwards all blockfrost requests via the `pages/api/[[...all]].ts` routes, making it possible to hide your blockfrost keys
