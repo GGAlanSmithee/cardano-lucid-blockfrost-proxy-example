@@ -6,7 +6,9 @@ Always be careful when interacting with the blockchain. Misuse can result in a l
 
 ## Explanation
 
-This is an example repo for using a proxy for the Lucid Blockfrost provider, so that the Project Id is not leaked to the client, as discussed in [this github issue](https://github.com/spacebudz/lucid/issues/25)
+This is an example repo for using a proxy for the Lucid Blockfrost provider, so that the Project Id is not leaked to the client, as discussed in [this github issue](https://github.com/spacebudz/lucid/issues/25).
+
+The example itself allows you to send a transaction over either testnet or mainnet.
 
 This repo uses `next.js` and React. The code itself is also quite React-ish, building mainly on custom hooks. I don't necessarily suggest building your code like this, but since I have to deal with network changes, this was a suitable pattern.
 
