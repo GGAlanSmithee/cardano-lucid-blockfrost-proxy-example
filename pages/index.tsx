@@ -47,7 +47,7 @@ const Index = () => {
       <br />
 
       <div>
-        <button onClick={() => sendTransaction()}>Send transaction</button>
+        <button onClick={sendTransaction}>Send transaction</button>
       </div>
     </div>
   )
