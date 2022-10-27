@@ -1,0 +1,23 @@
+
+.container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 5rem auto 0;
+    width: 1000px;
+}
+
+.warning {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.switch {
+    font-style: italic;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: lowercase;
+    display: block;
+    width: 200px;
+}

@@ -2,6 +2,8 @@ import { useHasNamiExtension } from 'hooks/use-has-nami-extension';
 import { useLucid } from 'hooks/use-lucid';
 import { useTransactionSender } from 'hooks/use-transaction';
 
+import styles from '../styles/index.module.css';
+
 const Index = () => {
   const hasNamiExtension = useHasNamiExtension()
   const { lucid, networkId } = useLucid()
@@ -16,7 +18,7 @@ const Index = () => {
   if (!lucid) return null
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         Network:{" "}
         <b>
@@ -26,16 +28,16 @@ const Index = () => {
             ? "Mainnet"
             : "Invalid network, use Testnet or Mainnet"}
         </b>
-        <div>Switch network in the nami wallet extension</div>
+        <div className={styles.switch}>Switch network in the nami wallet extension</div>
       </div>
 
       {networkId === 1 && (
         <>
           <br />
-          <div style={{
-            textTransform: "uppercase"
-          }}>
-            <b>In mainnet mode - be aware that you are sending real ADA to real people!</b>
+          <div>
+            <b className={styles.warning}>
+              mainnet - be aware that you are sending real ADA to real people!
+            </b>
           </div>
         </>
       )}
@@ -44,7 +46,8 @@ const Index = () => {
 
       <div>
         <label>
-          To Account{" "}
+          <span className={styles.label}>To Account</span>
+
           <input
             type="text"
             placeholder="account"
@@ -56,7 +59,7 @@ const Index = () => {
 
       <div>
         <label>
-          Lovelace{" "}
+          <span className={styles.label}>Lovelace</span>
           <input
             type="number"
             step="1000"
