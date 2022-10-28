@@ -1,6 +1,9 @@
 html,
 body {
-  height: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow-y: auto;
   background: rgb(245, 229, 163);
   background: linear-gradient(0deg, rgb(245, 229, 163) 0%, rgb(252, 247, 225) 100%);
 }
