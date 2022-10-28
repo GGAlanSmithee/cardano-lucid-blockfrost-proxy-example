@@ -4,6 +4,11 @@
 
 Always be careful when interacting with the blockchain. Misuse can result in a loss of funds. This is only a technical example, and should be treated as such, I don't take any responsibility for any damage it might cause.
 
+
+## Example App
+
+![example_display](.github/example_display.png)
+
 ## Explanation
 
 This is an example repo for using a proxy for the Lucid Blockfrost provider, so that the Project Id is not leaked to the client, as discussed in [this github issue](https://github.com/spacebudz/lucid/issues/25).
