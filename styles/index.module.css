@@ -24,12 +24,15 @@
   width: 200px;
 }
 
-.input, .button {
+.input,
+.button {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   border: 1px solid #777;
   border-radius: 4px;
+  outline: none;
+
 }
 
 .input[type="text"] {
@@ -37,8 +40,13 @@
 }
 
 .button {
-    margin-top: 1rem;
-    margin-bottom: -1rem;
+  background: white;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
+
+.button:disabled {
+  border: 1px solid #ccc;
 }
 
 .title {
