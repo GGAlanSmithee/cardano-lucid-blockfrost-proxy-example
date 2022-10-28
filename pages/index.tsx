@@ -17,18 +17,25 @@ const Index = () => {
   // not initialized yet
   if (!lucid) return null
 
+  const canTransact = lovelace > 0 && toAccount
+
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>Cardano Lucid Blockfrost Proxy API Example</h1>
+
       <div>
-        Network:{" "}
+        Connected to the{" "}
         <b>
           {networkId === 0
             ? "Testnet"
             : networkId === 1
             ? "Mainnet"
             : "Invalid network, use Testnet or Mainnet"}
-        </b>
-        <div className={styles.switch}>Switch network in the nami wallet extension</div>
+        </b>{" "}
+        Network
+        <div className={styles.info}>
+          <small>You can switch network in the nami wallet extension</small>
+        </div>
       </div>
 
       {networkId === 1 && (
@@ -36,7 +43,7 @@ const Index = () => {
           <br />
           <div>
             <b className={styles.warning}>
-              mainnet - be aware that you are sending real ADA to real people!
+              ⚠️ mainnet - be aware that you are sending real ADA to real people! ⚠️
             </b>
           </div>
         </>
@@ -49,8 +56,9 @@ const Index = () => {
           <span className={styles.label}>To Account</span>
 
           <input
+            className={styles.input}
             type="text"
-            placeholder="account"
+            placeholder="addr..."
             value={toAccount}
             onChange={(e) => setToAccount(e.target.value?.toString())}
           />
@@ -61,7 +69,9 @@ const Index = () => {
         <label>
           <span className={styles.label}>Lovelace</span>
           <input
+            className={styles.input}
             type="number"
+            min="0"
             step="1000"
             name="amount"
             value={lovelace}
@@ -70,10 +80,16 @@ const Index = () => {
         </label>
       </div>
 
-      <br />
-
       <div>
-        <button onClick={sendTransaction}>Send transaction</button>
+        <button disabled={!canTransact} className={styles.button} onClick={sendTransaction}>
+          Send transaction
+        </button>
+
+        <p className={styles.info}>
+          <small>
+            {!canTransact && "specify a lovelace amount and account to send a transaction"}
+          </small>
+        </p>
       </div>
     </div>
   )

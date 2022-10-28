@@ -1,23 +1,46 @@
-
 .container {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 5rem auto 0;
-    width: 1000px;
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 5rem auto 0;
+  width: 875px;
 }
 
 .warning {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    font-weight: bolder;
+  color: red;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
-.switch {
-    font-style: italic;
+.info {
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 .label {
-    font-size: 0.8rem;
-    text-transform: lowercase;
-    display: block;
-    width: 200px;
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  display: block;
+  width: 200px;
+}
+
+.input, .button {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+}
+
+.input[type="text"] {
+  width: 100%;
+}
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+
+.title {
+  padding-bottom: 2rem;
 }
