@@ -7,8 +7,7 @@ import styles from '../styles/index.module.css';
 const Index = () => {
   const hasNamiExtension = useHasNamiExtension()
   const { lucid, networkId } = useLucid()
-  const { lovelace, setLovelace, toAccount, setToAccount, sendTransaction } =
-    useTransactionSender(lucid)
+  const tx = useTransactionSender(lucid)
 
   // strict equals to avoid undefined
   if (hasNamiExtension === false)
@@ -17,7 +16,7 @@ const Index = () => {
   // not initialized yet
   if (!lucid) return null
 
-  const canTransact = lovelace > 0 && toAccount
+  const canTransact = tx.lovelace > 0 && tx.toAccount
 
   return (
     <div className={styles.container}>
@@ -59,8 +58,8 @@ const Index = () => {
             className={styles.input}
             type="text"
             placeholder="addr..."
-            value={toAccount}
-            onChange={(e) => setToAccount(e.target.value?.toString())}
+            value={tx.toAccount}
+            onChange={(e) => tx.setToAccount(e.target.value?.toString())}
           />
         </label>
       </div>
@@ -74,22 +73,32 @@ const Index = () => {
             min="0"
             step="1000"
             name="amount"
-            value={lovelace}
-            onChange={(e) => setLovelace(Number(e.target.value))}
+            value={tx.lovelace}
+            onChange={(e) => tx.setLovelace(e.target.value?.toString())}
           />
         </label>
       </div>
 
       <div>
-        <button disabled={!canTransact} className={styles.button} onClick={sendTransaction}>
+        <button
+          disabled={!canTransact || !!tx.error}
+          className={styles.button}
+          onClick={tx.sendTransaction}
+        >
           Send transaction
         </button>
 
-        <p className={styles.info}>
-          <small>
-            {!canTransact && "specify a lovelace amount and account to send a transaction"}
-          </small>
-        </p>
+        {!canTransact && (
+          <p className={styles.info}>
+            <small>specify a lovelace amount and account to send a transaction</small>
+          </p>
+        )}
+
+        {tx.error && (
+          <p className={styles.info}>
+            <small>{tx.error.message}</small>
+          </p>
+        )}
       </div>
     </div>
   )
