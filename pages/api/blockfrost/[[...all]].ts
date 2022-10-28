@@ -39,7 +39,7 @@ const blockfrostProxy: NextApiHandler = async (req, res) => {
 
     return response
   } catch (e) {
-    console.log("Blockfrost proxy error", e)
+    console.error("Blockfrost proxy error", e)
 
     // NOTE(Alan): Not sure if this is compatible with Lucid / the Blockfrost provider
     return res.status(400).end()

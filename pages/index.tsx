@@ -88,7 +88,7 @@ const Index = () => {
           Send transaction
         </button>
 
-        {!canTransact && (
+        {!tx.successMessage && !tx.error && !canTransact && (
           <p className={styles.info}>
             <small>specify a lovelace amount and account to send a transaction</small>
           </p>
@@ -97,6 +97,12 @@ const Index = () => {
         {tx.error && (
           <p className={styles.info}>
             <small>{tx.error.message}</small>
+          </p>
+        )}
+
+        {tx.successMessage && (
+          <p className={styles.info}>
+            <small>{tx.successMessage}</small>
           </p>
         )}
       </div>

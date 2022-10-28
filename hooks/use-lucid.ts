@@ -14,8 +14,6 @@ const useLucid = () => {
   const createLucidInstance = useCallback(async () => {
     if (isNil(walletApi) || isNil(networkId)) return
 
-    console.log("instantiating lucid instance with network id", networkId)
-
     const newLucidInstance = await Lucid.new(
       new Blockfrost(`/api/blockfrost/${networkId}`, ""),
       networkId === 0 ? "Testnet" : "Mainnet"
