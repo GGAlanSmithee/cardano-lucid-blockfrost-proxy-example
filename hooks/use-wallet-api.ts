@@ -2,7 +2,6 @@ import { WalletApi } from 'lucid-cardano';
 import { useEffect, useState } from 'react';
 
 const useWalletApi = () => {
-  const [isValid, setIsValid] = useState()
   const [walletApi, setWalletApi] = useState<WalletApi>()
 
   useEffect(() => {
