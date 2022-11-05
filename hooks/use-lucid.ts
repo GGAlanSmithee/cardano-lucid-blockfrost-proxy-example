@@ -12,19 +12,17 @@ const useLucid = () => {
   const networkId = useNetworkId(walletApi)
 
   useEffect(() => {
-    if (isNil(walletApi)) return
+    if (isNil(networkId) || isNil(walletApi)) return
 
-    lucid.selectWallet(walletApi)
-  }, [walletApi])
-
-  useEffect(() => {
-    if (isNil(networkId)) return
-
+    // todo, check which of these values that have actually changed
     lucid.switchProvider(
       new Blockfrost(`/api/blockfrost/${networkId}`),
       networkId === 0 ? "Testnet" : "Mainnet"
     )
-  }, [networkId])
+
+    // for now, we always need to selectWallet after switching provider
+    lucid.selectWallet(walletApi)
+  }, [networkId, walletApi])
 
   return {
     networkId,
