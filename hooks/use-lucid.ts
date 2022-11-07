@@ -15,13 +15,15 @@ const useLucid = () => {
     if (isNil(networkId) || isNil(walletApi)) return
 
     // todo, check which of these values that have actually changed
-    lucid.switchProvider(
-      new Blockfrost(`/api/blockfrost/${networkId}`),
-      networkId === 0 ? "Testnet" : "Mainnet"
-    )
-
-    // for now, we always need to selectWallet after switching provider
-    lucid.selectWallet(walletApi)
+    lucid
+      .switchProvider(
+        new Blockfrost(`/api/blockfrost/${networkId}`),
+        networkId === 0 ? "Testnet" : "Mainnet"
+      )
+      .then(() => {
+        // for now, we always need to selectWallet after switching provider
+        lucid.selectWallet(walletApi)
+      })
   }, [networkId, walletApi])
 
   return {
