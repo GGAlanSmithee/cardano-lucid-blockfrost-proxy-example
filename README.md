@@ -5,9 +5,15 @@
 Always be careful when interacting with the blockchain. Misuse can result in a loss of funds. This is only a technical example, and should be treated as such, I don't take any responsibility for any damage it might cause.
 
 
-## Example App
+## Examples
 
-![example_display](.github/example_display.png)
+### Processing a transaction
+
+![processing_a_transaction](.github/processing_a_transaction.png)
+
+### Listing assets
+
+![listing_assets](.github/listing_assets.png)
 
 ## Explanation
 
