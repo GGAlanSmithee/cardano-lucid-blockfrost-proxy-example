@@ -20,7 +20,7 @@ const Index = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>List of Assets example</h1>
+      <h1 className={styles.title}>Listing Assets Example</h1>
 
       {lovelace > 0 && <div>ADA: {lovelaceToAda(lovelace)}</div>}
 

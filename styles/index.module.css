@@ -2,7 +2,7 @@
   font-size: 1.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 5rem auto 0;
-  width: 875px;
+  width: 900px;
 }
 
 .warning {
@@ -56,4 +56,8 @@
 
 .list {
   list-style: none;
+}
+
+.a {
+  color: black;
 }
