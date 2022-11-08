@@ -51,4 +51,9 @@
 
 .title {
   padding-bottom: 2rem;
+  text-align: center;
+}
+
+.list {
+  list-style: none;
 }
