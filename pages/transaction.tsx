@@ -80,11 +80,7 @@ const Index = () => {
       </div>
 
       <div>
-        <button
-          disabled={!canTransact || !!tx.error}
-          className={styles.button}
-          onClick={tx.sendTransaction}
-        >
+        <button disabled={!canTransact} className={styles.button} onClick={tx.sendTransaction}>
           Send transaction
         </button>
 
