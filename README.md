@@ -4,7 +4,7 @@
 
 Always be careful when interacting with the blockchain. Misuse can result in a loss of funds. This is only a technical example, and should be treated as such, I don't take any responsibility for any damage it might cause.
 
-## use-cardano, use-cardano-blockfrost proxy, and Cardano Starter Kit
+## use-cardano, use-cardano-blockfrost-proxy, and Cardano Starter Kit
 
 This repository is a simplified example of how to proxy blockfrost requests, and does good to serve as a reference. If you are looking for a complete solution of integration lucid and blockfrost in a React or Next.js project, you should check out [use-cardano](https://www.github.com/use-cardano/use-cardano) with [use-cardano-blockfrost-proxy](https://www.github.com/use-cardano/use-cardano-blockfrost-proxy). If you want a ready-to-use Next.js starter kit, have a look at [Cardano Starter Kit](https://cardano-starter-kit.alangaming.com).
 
